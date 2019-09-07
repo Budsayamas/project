@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-navbar color="A700">
+    
+
+    <ion-buttons end>
+      <button ion-button (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>
+      <ion-icon style="font-size: 30px;" name="paw" color="light">PetFirst</ion-icon>
+    </ion-title>
+
+
+  </ion-navbar>
+  <ion-toolbar color="A700">
+    <ion-segment color="light">
+      <ion-segment-button (click)="selectDog()" href="#dogs" value="dogs">
+        
+        สุนัข
+      </ion-segment-button>
+      <ion-segment-button (click)="selectCat()" href="#cats" value="cats">
+        
+        แมว
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="card-background-page">
+  <ion-card *ngIf="result" text-center>
+    <ion-icon ios="ios-contacts" md="md-contacts">{{result.email}} </ion-icon>
+  </ion-card>
+  <div [ngSwitch]="selectPet" (swipe)="onswipe($event)">
+    <div *ngSwitchCase="'dogs'">
+      <img src="../../assets/imgs/cd.jpg" />
+      <ion-card (click)="selectLearning()">
+        <img src="../../assets/imgs/Learn.jpg" (click)="selectLearning()" />
+        <div class="card-title">ปฐมพยาบาล</div>
+      </ion-card>
+      <ion-card (click)="selectEmergency()">
+        <img src="../../assets/imgs/Emer.jpg" />
+        <div class="card-title">แผนที่</div>
+      </ion-card>
+      
+    </div>
+    <div *ngSwitchCase="'cats'">
+      <img src="../../assets/imgs/CD2.jpg" />
+
+      <ion-card (click)="selectLearning()">
+        <img src="../../assets/imgs/Learn c1.jpg" />
+        <div class="card-title">ปฐมพยาบาล</div>
+      </ion-card>
+      <ion-card (click)="selectEmergency()">
+        <img src="../../assets/imgs/Emer c.jpg" />
+        <div class="card-title">แผนที่</div>
+      </ion-card>
+      
+    </div>
+  </div>
+
+  <ion-fab right bottom>
+    <button ion-fab color="A700">
+      <ion-icon name="arrow-dropleft"></ion-icon>
+    </button>
+    <ion-fab-list side="left">
+      <button ion-fab (click)=" selectVideo()" color="A700">
+        <ion-icon name="logo-youtube"></ion-icon>
+      </button>
+      <button ion-fab (click)="selectMyPet()" color="A700">
+        <ion-icon name="add"></ion-icon>
+      </button>
+      
+    </ion-fab-list>
+
+  </ion-fab>
+
+</ion-content>

@@ -1,0 +1,30 @@
+page-login {
+    div#logo {
+        margin-top: 25px;
+        margin-bottom: 12px;
+      }
+      .content {
+        background-color: #fc0000;
+      }
+      .item {
+        background-color: #fc0000;
+      }
+    
+      ion-label {
+        color: color($colors, light);
+        text-align: center;
+        margin: 0;
+      }
+    
+      .label {
+        margin: 0 0 5px 0;
+      }
+    
+      ion-input {
+        background-color: #fff;
+        border-radius: 500px;
+        margin: 0 0 5px 0;
+        padding-left: 10px;
+      }
+    
+}

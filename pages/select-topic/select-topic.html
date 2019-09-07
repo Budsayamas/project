@@ -1,0 +1,22 @@
+
+<ion-header>
+
+    <ion-navbar color="A700">
+        
+        <ion-title><ion-icon style="font-size: 30px;" name="paw" color="light">เรียนรู้</ion-icon> </ion-title>
+       
+    
+      </ion-navbar> 
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="items">
+      <ion-item *ngFor="let topic of items" (click)="selectTopic(topic)">
+        {{topic.topicName}}
+      </ion-item>
+    </div>
+
+     
+        
+</ion-content>

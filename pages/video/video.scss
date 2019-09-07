@@ -1,0 +1,22 @@
+page-video {
+    ion-title{
+        font-family: PermanentMarker;/*changes the font of our title*/
+        margin-top:1vh;/*adds a margin to the top of our title*/
+    }
+      /*styling for our empty list class, in the event that
+      your app will be more than one page, I suggest placing this
+      in app.scss*/
+    .empty-list{
+        text-align: center; /*centers all text and divs horizontally*/
+        margin-top: 40% !important;/*adds a margin to the top of our element*/
+      /*styles our ion-icons that are within the class empty list*/
+        ion-icon{
+            font-size: 10vh;
+            opacity:.5;
+        }
+      /*styles class pageText*/
+        .pageText{
+            text-align: center; /*centers text/divs of class pageText*/
+        }
+    }
+}

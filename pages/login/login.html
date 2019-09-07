@@ -1,0 +1,38 @@
+<ion-content padding text-center>
+  
+  <form [formGroup]='form' (ngSubmit)='login(form.value)'>
+<div  id="logo" padding text-center>
+    <img src="../../assets/imgs/ps.png" style="width: 300px;"> <br>
+     <ion-icon style="font-size: 100px;" name="paw" color="light"></ion-icon>
+</div>
+<ion-item>
+ 
+</ion-item>
+    <ion-list no-lines>
+
+      <ion-item >
+        
+        <ion-input placeholder="อีเมล์" type="text" value="" formControlName="email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        
+        <ion-input placeholder="รหัสผ่าน" type="password" value="" formControlName="password" [(ngModel)]="password"></ion-input>
+        <!-- <button ion-button full (click)="login()"></button> -->
+      </ion-item>
+    </ion-list>
+
+    
+    <button ion-button block  color="light"  text-center [disabled]="!form.valid " round>
+      เข้าสู่ระบบ <ion-icon name="md-log-in"></ion-icon> </button><br>
+  </form>
+
+  
+  <br>
+  <p text-center>ยังไม่ได้เป็นสมาชิก ?
+    <br><br>
+  <button ion-button round color="light" icon-right (click)="register()"> สมัครสมาชิก  <ion-icon name="md-person-add"></ion-icon></button>
+
+  <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" language="javascript" src="login.js"></script>
+
+</ion-content>

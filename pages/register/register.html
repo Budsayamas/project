@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar color="A700">
+    <ion-title>สมัครสมาชิก</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <br>
+  <form [formGroup]='form' (ngSubmit)='saveRegister(form.value)'>
+    <ion-item>
+      <ion-label stacked>ชื่อผู้ใช้: </ion-label>
+      <ion-input placeholder="กรุณากรอกชื่อผู้ใช้" type="text" formControlName="Username" [(ngModel)]="Username">
+      </ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-label stacked>อีเมล์: </ion-label>
+      
+      <ion-input placeholder="email ในรูปแบบ example@gmail.com" type="email" formControlName="email" [(ngModel)]="email" >
+          
+      </ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-label stacked>รหัสผ่าน: </ion-label>
+      <ion-input placeholder="กรุณากรอกรหัสผ่าน(อย่างน้อย 6 อักขระ)" type="password" formControlName="password" [(ngModel)]="password">
+      </ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-label stacked>ยืนยันรหัสผ่าน: </ion-label>
+      <ion-input placeholder="กรุณากรอกรหัสผ่าน(อย่างน้อย 6 อักขระ)" type="password" formControlName="password" [(ngModel)]="confirmpassword">
+      </ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-label stacked>เบอร์โทร: </ion-label>
+      <ion-input placeholder="กรุณากรอกเบอร์โทรศัพท์ให้ครบ 10 หลัก" type="number" formControlName="phonenumber"   minlength="10" maxlength="10"  [(ngModel)]="phonenumber"  >
+      </ion-input>
+    </ion-item>
+    <br>
+    <br>
+    <div padding text-center>
+    <button  ion-button round color="A700" text-center [disabled]="!form.valid " type="submit">
+      สมัครสมาชิก <ion-icon name="md-person-add"> </ion-icon></button>
+      </div>
+  </form>
+
+</ion-content>

@@ -1,0 +1,13 @@
+page-my-pet {
+    .item ion-thumbnail {
+        min-width: 0rem;    
+        min-height: 9rem;
+        img {
+            max-width: 10rem;    
+            min-width: 10rem;
+            max-height: 10rem;    
+            min-height: 10rem;
+        }
+    }
+    
+}

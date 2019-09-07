@@ -1,0 +1,36 @@
+
+<ion-header>
+  <ion-navbar color="A700">
+    
+    <ion-title>
+      <ion-icon style="font-size: 30px;" name="paw" color="light">เบอร์โทรศัพท์</ion-icon>
+    </ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]='form' (ngSubmit)='updateDocument(form.value)'>
+
+   
+    <ion-item>
+      <ion-label stacked>สัตวแพทย์:</ion-label>
+      <ion-input type="text" formControlName="veterinarian" [(ngModel)]="veterinarian"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>โทร:</ion-label>
+      <ion-input type="text" formControlName="PhoneNum" [(ngModel)]="PhoneNum"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <button ion-button block color="danger" text-center padding-top padding-bottom [disabled]="!form.valid">
+        Update Pet
+      </button>
+    </ion-item>
+
+    
+   
+  </form>
+</ion-content>

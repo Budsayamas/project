@@ -1,0 +1,32 @@
+
+<ion-header>
+    <ion-navbar color="A700">
+        
+      <ion-title >
+       <ion-icon style="font-size: 30px;" name="paw" color="light">เฉลย</ion-icon>
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content padding>
+    <ion-list *ngIf="result">
+        <ion-item>
+          <strong>Correct Answer: </strong>{{result.CorrectAnswer}}
+        </ion-item>
+        <ion-item>
+          <strong>Your Answer: </strong> {{result.AnswerText}}
+        </ion-item>
+        <ion-item>
+          <div *ngIf="!isCorrectAnswer()" style="width:75%; height: 75%; display:block;
+          margin-left: auto; margin-right: auto;">
+            <img src="assets/imgs/unchecked.png">
+          </div>
+          <div *ngIf="isCorrectAnswer()" style="width:75%; height: 75%; display:block;
+          margin-left: auto; margin-right: auto;">
+            <img src="assets/imgs/checked.png">
+          </div>
+        </ion-item>
+      </ion-list>
+    
+</ion-content>

@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar color="A700">
+    <ion-title>
+      <ion-icon style="font-size: 30px;" name="paw" color="light">บันทึก</ion-icon>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <form [formGroup]='form' (ngSubmit)='updateDocument(form.value)'>
+    <ion-item>
+      <p><img src="{{imageName}}"></p>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>ชื่อ:{{name}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>ชื่อสถานพยาบาล/สัตวแพทย์:</ion-label>
+      <ion-input type='text' formControlName='name' [(ngModel)]='hospital'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>อาการ/การรักษา:</ion-label>
+      <ion-input type='text' formControlName='name' [(ngModel)]='symptom'></ion-input>
+    </ion-item>
+    <ion-item *ngIf="this.dogorcat=='แมว'">
+      <ion-label stacked>วัคซีนที่แมวได้รับ</ion-label>
+      <ion-select [(ngModel)]="vaccine" formControlName='name' multiple="true" placeholder="เลือกวัคซีน">
+        <ion-option value="วัคซีนรวม">วัคซีนรวม </ion-option>
+        <ion-option value="ป้องกันโรคไข้หัด หวัดแมว ระบบทางเดินหายใจ ช่องปาก และตาอักเสบ">วัคซีนป้องกันโรคไข้หัด หวัดแมว ระบบทางเดินหายใจ ช่องปาก และตาอักเสบ</ion-option>
+        <ion-option value="วัคซีนป้องกันโรคลิวคีเมีย">วัคซีนป้องกันโรคลิวคีเมีย</ion-option>
+        <ion-option value="วัคซีนป้องกันโรคพิษสุนัขบ้า">วัคซีนป้องกันโรคพิษสุนัขบ้า</ion-option>
+        <ion-option value="ยาป้องกันเห็บหมัดและพยาธฺิหนอนหัวใจ">ยาป้องกันเห็บหมัดและพยาธฺิหนอนหัวใจ</ion-option>
+        <ion-option value="ยาถ่ายพยาธิ">ยาถ่ายพยาธิ</ion-option>
+        <ion-option value="วัคซีนป้องกันโรคพิษสุนัขบ้า">วัคซีนป้องกันโรคพิษสุนัขบ้า</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="this.dogorcat=='สุนัข'">
+      <ion-label stacked>วัคซีนที่สุนัขได้รับ</ion-label>
+      <ion-select [(ngModel)]="vaccine" formControlName='name' multiple="true" placeholder="เลือกวัคซีน">
+          <ion-option value="วัคซีนรวม">วัคซีนรวม </ion-option>
+        <ion-option value="วัคซีนป้องกันโรคหลอดลมอักเสบติดต่อ">วัคซีนป้องกันโรคหลอดลมอักเสบติดต่อ</ion-option>
+        <ion-option value="วัคซีนป้องกันโรคไข้หัดสุนัขตับอักเสบและเลพโตสไปโรซีส">วัคซีนป้องกันโรคไข้หัดสุนัขตับอักเสบและเลพโตสไปโรซีส</ion-option>
+        <ion-option value="วัคซีนป้องกันโรคลำไส้อักเสบติดต่อ">วัคซีนป้องกันโรคลำไส้อักเสบติดต่อ</ion-option>
+        <ion-option value="ยาป้องกันเห็บหมัดและพยาธฺิหนอนหัวใจ">ยาป้องกันเห็บหมัดและพยาธฺิหนอนหัวใจ</ion-option>
+        <ion-option value="ยาถ่ายพยาธิ">ยาถ่ายพยาธิ</ion-option>
+        <ion-option value="ยาป้องกันโรคพยาธิหัวใจ">ยาป้องกันโรคพยาธิหัวใจ</ion-option>
+        <ion-option value="วัคซีนป้องกันโรคพิษสุนัขบ้า">วัคซีนป้องกันโรคพิษสุนัขบ้า</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>วันที่:</ion-label>
+      <ion-input type='date' formControlName='name' [(ngModel)]='date'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>เวลา:</ion-label>
+      <ion-input type='time' formControlName='name' [(ngModel)]='time'></ion-input>
+    </ion-item>
+    <ion-item>
+      <button ion-button block  color="A700" text-center padding-top padding-bottom round>
+       เพิ่มการรักษา
+        <ion-icon name="paw"></ion-icon>
+       </button>
+    </ion-item>
+
+  </form>
+
+
+</ion-content>

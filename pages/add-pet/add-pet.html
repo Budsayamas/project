@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar color="A700">
+    <ion-title>
+      <ion-icon style="font-size: 30px;" name="paw" color="light">สัตว์เลี้ยง</ion-icon>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-item>
+        <p><img src="{{currentImage}}"></p>
+      </ion-item>
+  <form [formGroup]='form' (ngSubmit)='saveDocument(form.value)'>
+    <ion-item>
+      <ion-label stacked>ชื่อสัตว์เลี้ยง:</ion-label>
+      <ion-input type='text' formControlName='name' [(ngModel)]='name'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>วันเกิด:</ion-label>
+      <ion-input type='date' formControlName='birthday' [(ngModel)]='birthday'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>สุนัข/แมว:</ion-label>
+      <!-- <ion-input type="text" formControlName="dogorcat" [(ngModel)]="dogorcat"></ion-input> -->
+      <ion-select [(ngModel)]="dogorcat" formControlName="dogorcat">
+        <ion-option value="สุนัข">สุนัข</ion-option>
+        <ion-option value="แมว">แมว</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>พันธ์ุ:</ion-label>
+      <ion-input type="text" formControlName="breed" [(ngModel)]="breed"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>เพศ</ion-label>
+      <!-- <ion-input type="text" readonly formControlName="sex" [(ngModel)]="sex1"></ion-input> -->
+      <ion-select [(ngModel)]="sex" formControlName="sex">
+        <ion-option value="เพศผู้">เพศผู้</ion-option>
+        <ion-option value="เพศเมีย">เพศเมีย</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>สี:</ion-label>
+      <ion-input type="text" formControlName="color" [(ngModel)]="color"></ion-input>
+    </ion-item>
+    <ion-item text-center padding-top padding-bottom>
+      <button  ion-button block color="A700" text-center padding-top padding-bottom round>
+        เพิ่มข้อมูล
+        <ion-icon name="paw"></ion-icon>
+      </button>
+    </ion-item>
+  </form>
+  <ion-item text-center padding-top padding-bottom>
+    <button  ion-button round color="A700" ion-button (click)="getimage()" text-center padding-top padding-bottom>
+      เพิ่มรูป
+      <ion-icon ios="ios-image" md="md-image"></ion-icon>
+    </button>
+    <button  ion-button round color="A700" ion-button (click)="takePhoto()" text-center padding-top padding-bottom>
+      ถ่ายรูป
+      <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
+    </button>
+  </ion-item>
+</ion-content>

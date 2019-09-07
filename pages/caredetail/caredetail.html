@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar color="A700">
+    <ion-title>
+      <ion-icon style="font-size: 30px;" name="paw" color="light">ข้อมูล</ion-icon>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card>
+    <img src="{{imageName}}">
+    <ion-card-content style="color: rgb(207, 0, 0)">
+      <ion-card-title>
+        <a><b>ชื่อ:</b>{{name}} </a>
+        <a><b>วันเกิด:</b>{{ birthday}}</a>
+      </ion-card-title>
+      <a>
+        <b>{{dogorcat}}</b>&nbsp;&nbsp;&nbsp;<b>เพศ:</b>{{sex}} <br>
+        <b>พันธุ์:</b>{{breed}}&nbsp;&nbsp;&nbsp;<b>สี:</b>{{color}}
+      </a>
+
+    </ion-card-content>
+  </ion-card>
+  <ion-item text-wrap *ngFor="let item of all">
+    <tr>
+      <td>
+        <b>วันที่:</b>  {{item[0]}}&nbsp;&nbsp;&nbsp;&nbsp;<b>เวลา:</b> {{item[1]}}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>สถานที่/สัตวแพทย์:</b> {{item[2]}}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>อาการ/การรักษา:</b> {{item[3]}}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>วัคซีนที่ได้รับ:</b> {{item[4]}}
+      </td>
+    </tr>
+  </ion-item>
+
+</ion-content>

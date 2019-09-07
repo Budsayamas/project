@@ -1,0 +1,23 @@
+ page-home {
+    
+    ion-content {
+        background: rgb(255, 255, 255)!important;
+    }
+    .card-background-page {
+    
+        ion-card {
+        position: relative;
+        text-align: left;
+        }
+    
+        .card-title {
+        position: absolute;
+        top: 15%;
+        font-size: 1.5em;
+        width: 100%;
+        font-weight: bold;
+        color: rgb(15, 15, 15);
+        } 
+        
+    }
+}

@@ -1,0 +1,28 @@
+
+<ion-header>
+  <ion-navbar color="A700">
+      
+    <ion-title >
+    <ion-icon style="font-size: 30px;" name="paw" color="light">ติดต่อ</ion-icon>
+    </ion-title>
+    <!-- <ion-buttons end>
+      <button ion-button (click)=" gotoAddPhone()">
+        <ion-icon name="call"></ion-icon>
+      </button>
+    </ion-buttons> -->
+  </ion-navbar>
+  </ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let item of contentData"(tap)="displayActionSheet(item)">
+    <ion-thumbnail item-start>
+      <img src ="../../assets/imgs/telephone.png">
+    </ion-thumbnail>
+ <h3>{{item.veterinarian}}</h3>
+ <p>{{item. PhoneNum}}</p>
+ 
+ </ion-item>
+   </ion-list>
+</ion-content>
